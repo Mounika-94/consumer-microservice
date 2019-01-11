@@ -24,7 +24,7 @@ import com.prft.microservices.consumer.model.Client;
  *
  */
 @RunWith(SpringRunner.class)
-//@SpringBootTest
+// @SpringBootTest
 @ContextConfiguration("/applicationContext.xml")
 public class RetreiveDataServiceImplTest {
 
@@ -36,7 +36,7 @@ public class RetreiveDataServiceImplTest {
 
 	@InjectMocks
 	RetreiveDataServiceImpl retreiveDataServiceImpl;
-	
+
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
@@ -54,7 +54,7 @@ public class RetreiveDataServiceImplTest {
 		Client client = new Client();
 		Mockito.when(updateClientStatusDao.updateClientStatus(client)).thenReturn(Mockito.anyLong());
 		retreiveDataServiceImpl.retreiveDataFromTopic(client);
-		Mockito.verify(updateClientStatusDao.updateClientStatus(client));
+		Mockito.verify(updateClientStatusDao).updateClientStatus(client);
 		assertThat(retreiveDataService).isNotNull();
 	}
 
