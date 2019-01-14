@@ -3,12 +3,17 @@
  */
 package com.prft.microservices.consumer.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * @author mounika.pandiri
  *
  */
+@Document(collection = "client")
 public class Client {
 
+	@Id
 	private String company;
 	private String name;
 	private String email;
