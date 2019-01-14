@@ -10,9 +10,12 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import com.prft.microservices.consumer.dao.UpdateClientStatusDao;
 import com.prft.microservices.consumer.dao.UpdateClientStatusDaoImpl;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @SpringBootApplication(exclude = KafkaAutoConfiguration.class)
 @EnableMongoRepositories(basePackageClasses = UpdateClientStatusDao.class)
-@EnableDiscoveryClient 
+@EnableDiscoveryClient
+@EnableSwagger2
 public class ConsumerMicroServiceApplication {
 
 	@Bean
